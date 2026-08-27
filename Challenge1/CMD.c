@@ -54,6 +54,8 @@
 #define INITIAL_CAPACITY 5
 void commandTerminal();
 void clearAllStrings(char **arr, size_t count);
+void totalCommands();
+
 
 //defining the debug macro
 #define DEBUG
@@ -95,7 +97,12 @@ void clearAllStrings(char **arr, size_t count){
     } 
     free(arr);
 }
-
+//Function to count the number of total commands entered
+void trackCommandEntry(){
+    static int totalCommands = 0;
+    totalCommands++;
+    printf("Total commands entered so far: %d\n", totalCommands);
+}
 //This is the function that the main operation of a command terminal
 void commandTerminal(){
     
@@ -156,6 +163,7 @@ void commandTerminal(){
                     return;
                 }
             pUserInput[i] = temp; //assign the allocated memory from temp to string array
+            LOG("String array resized\n");
         }
         stringCapacity = INITIAL_CAPACITY; //resets the memory capacity to avoid unnecessary memory usage
         
@@ -165,6 +173,8 @@ void commandTerminal(){
                 if(strcmp(pUserInput[i], "exit") == 0){
                     free(pUserInput[i]);
                     break;
+                }else{
+                    trackCommandEntry();
                 }
         
         count++;
@@ -182,6 +192,7 @@ void commandTerminal(){
             }
             
             pUserInput = temp2;
+            LOG("Command array resized\n");
  
         }
  
