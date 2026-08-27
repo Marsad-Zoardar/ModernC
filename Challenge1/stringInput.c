@@ -178,114 +178,119 @@
 //    
 //    free(pUserInput);
 //}     
-/*************Function 8 - This function has a 2D array, where malloc and realloc were both used************************/
-void arrayString4(){
-    
-    char **pUserInput; //char --> one character, char* --> one string, char** --> array of strings
-
-    
-    size_t commandCapacity = INITIAL_CAPACITY;
-    size_t count = 0;
-    size_t stringCapacity = INITIAL_CAPACITY;
-    size_t i = 0;
-    
-    pUserInput = malloc(commandCapacity*sizeof(*pUserInput));
-    //check if memory allocation for the string array were successful or not
-        if(pUserInput == NULL){
-            printf("Memory allocation failed!");
-            return;
-        }
-    
-    while(1){
-        printf("Enter your command\n> ");
-        
-        pUserInput[i] = malloc(stringCapacity);
-        //Check if malloc were successful or not
-            if(pUserInput[i] == NULL){
-                printf("Memory allocation failed!");
-                return;
-            }
-        
-        size_t length = 0;
-        while(1){
-            if(fgets(pUserInput[i] + length, stringCapacity - length, stdin) == NULL){
-                printf("String read error!");
-                free(pUserInput);
-                free(pUserInput[i]);
-                return;
-            }
-        
-                if(strchr(pUserInput[i] + length, '\n') != NULL){
-                    break;
-                }
-            length = strlen(pUserInput[i]);
-            
-            stringCapacity *= 2;
-            char *temp;
-            temp = realloc(pUserInput[i], stringCapacity);
-                if(temp == NULL){
-                    printf("Memory allocation failed!");
-                    free(pUserInput[i]);
-                    return;
-                }
-            pUserInput[i] = temp;
-        }
-        stringCapacity = INITIAL_CAPACITY;
-        
-        
-            pUserInput[i][strcspn(pUserInput[i], "\n")] = '\0';
-        
-                if(strcmp(pUserInput[i], "exit") == 0){
-                    free(pUserInput[i]);
-                    break;
-                }
-        
-        count++;
-        i++;
-        
-        if(count == commandCapacity){
-            char **temp2;
-            commandCapacity *= 2;
-            
-            temp2 = realloc(pUserInput, commandCapacity*sizeof(*pUserInput));
-            if(temp2 == NULL){
-                printf("Memory allocation failed!");
-                free(pUserInput[i]);
-                return;
-            }
-            
-            pUserInput = temp2;
- 
-        }
- 
-    }
-    
-    printf("\tYou entered\n");
-    printf("---------------------------------\n");
-    
-    for(size_t j = 0; j < count; j++){
-        printf("%s\n", pUserInput[j]);
-        free(pUserInput[j]);
-        
-    }
-    
-    
-    free(pUserInput);
-    
-}    
- 
-int main(){
-     
-     //inputChar();
-     //inputChar2();
-     //inputChar3();
-     //inputChar4();
-     //inputChar5();
-     //arrayString();
-     //arrayString2();
-     //arrayString3();
-     arrayString4();
-     
-     
-     return 0;
-}
+/*************Function 9 - This function has a 2D array, where malloc and realloc were both used************************/
+//void arrayString4(){
+//    
+//    char **pUserInput; //char --> one character, char* --> one string, char** --> array of strings
+//    int i = 0; //variable to keep track of the array index
+//
+//    
+//    size_t commandCapacity = INITIAL_CAPACITY; //initialize the capacity for total number of bytes for commands
+//    size_t stringCapacity = INITIAL_CAPACITY; //initialize the capacity for total number of bytes in a string
+//    size_t count = 0; //variable to count the total number of commands already entered
+//    
+//    pUserInput = malloc(commandCapacity*sizeof(*pUserInput)); //allocated memory for the address of the commands
+//    
+//    //check if memory allocation for the string array were successful or not
+//        if(pUserInput == NULL){
+//            printf("Memory allocation failed!");
+//            //no need to free(), as it is already NULL
+//            return;
+//        }
+//    
+//    while(1){ //removed the initial for loop to avoid unnecessary loop count
+//        printf("Enter your command\n> ");
+//        
+//        
+//        pUserInput[i] = malloc(stringCapacity); //allocate memory for the string array
+//        //Check if malloc were successful or not
+//            if(pUserInput[i] == NULL){
+//                printf("Memory allocation failed!");
+//                return;
+//            }
+//        
+//        size_t length = 0; //variable to check the entered string length in fgets
+//
+//        while(1){ //This loop is to continue taking input from the user until it finds a end of line and keep allocating memory 
+//            if(fgets(pUserInput[i] + length, stringCapacity - length, stdin) == NULL){
+//                printf("String read error!");
+//                free(pUserInput[i]);//free memory allocation if read fails
+//                free(pUserInput);//free memory allocation if read fails
+//                
+//                return;
+//            }
+//        
+//                if(strchr(pUserInput[i] + length, '\n') != NULL){ //check if there is a end of line
+//                    break; //breaks out of the while loop as soon as it finds a line
+//                }
+//            length = strlen(pUserInput[i]);
+//            
+//            stringCapacity *= 2;//if the input is longer than the INITIAL_CAPACITY, it doubles the string capacity
+//            char *temp; //temporary memory to realloc
+//            temp = realloc(pUserInput[i], stringCapacity);
+//                if(temp == NULL){
+//                    printf("Memory allocation failed!");
+//                    free(pUserInput[i]);
+//                    return;
+//                }
+//            pUserInput[i] = temp; //assign the allocated memory from temp to string array
+//        }
+//        stringCapacity = INITIAL_CAPACITY; //resets the memory capacity to avoid unnecessary memory usage
+//        
+//        
+//            pUserInput[i][strcspn(pUserInput[i], "\n")] = '\0'; //
+//        
+//                if(strcmp(pUserInput[i], "exit") == 0){
+//                    free(pUserInput[i]);
+//                    break;
+//                }
+//        
+//        count++;
+//        i++;
+//        
+//        if(count == commandCapacity){
+//            char **temp2;
+//            commandCapacity *= 2;
+//            
+//            temp2 = realloc(pUserInput, commandCapacity*sizeof(*pUserInput));
+//            if(temp2 == NULL){
+//                printf("Memory allocation failed!");
+//                free(pUserInput[i-1]);
+//                return;
+//            }
+//            
+//            pUserInput = temp2;
+// 
+//        }
+// 
+//    }
+//    
+//    printf("\tYou entered\n");
+//    printf("---------------------------------\n");
+//    
+//    for(size_t j = 0; j < count; j++){
+//        printf("%s\n", pUserInput[j]);
+//        free(pUserInput[j]);
+//        
+//    }
+//    
+//    
+//    free(pUserInput);
+//    
+//}    
+// 
+//int main(){
+//     
+//     //inputChar();
+//     //inputChar2();
+//     //inputChar3();
+//     //inputChar4();
+//     //inputChar5();
+//     //arrayString();
+//     //arrayString2();
+//     //arrayString3();
+//     arrayString4();
+//     
+//     
+//     return 0;
+//}
