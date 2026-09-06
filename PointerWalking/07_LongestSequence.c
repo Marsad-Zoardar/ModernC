@@ -12,7 +12,7 @@ size_t longestSequence(const char *ptr);
 
 int main(void){
     
-    char string[] = "  Today is a good day to code!";
+    char string[] = "Today is a good day to code!";
     
     printf("The longest word has %zu characters\n", longestSequence(string));
     
