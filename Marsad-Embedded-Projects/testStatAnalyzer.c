@@ -110,7 +110,7 @@ void wordCount(const char *ptr){
 }
 
 
-        ptr++;
+  
         
         
 
