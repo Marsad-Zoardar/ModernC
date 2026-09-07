@@ -10,15 +10,15 @@
 
 size_t shortestWord(const char *ptr);
 
-int main(void){
-    
-    
-    char string[] = "Today is s good day to code!";
-    
-    printf("The shortest word in the string has %zu characters\n", shortestWord(string));
-    
-    return 0;
-}
+//int main(void){
+//    
+//    
+//    char string[] = "Today is a good day to code!";
+//    
+//    printf("The shortest word in the string has %zu characters\n", shortestWord(string));
+//    
+//    return 0;
+//}
 
 size_t shortestWord(const char *ptr){
     
