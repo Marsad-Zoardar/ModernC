@@ -1,6 +1,6 @@
 //Author: Md Marsad Zoardar
 //September 07, 2026
-//Program 9: This program finds the shortest word in a string
+//Program 9: This program finds the longest word in a string
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,14 +10,14 @@
 
 size_t longestWord(const char *ptr);
 
-int main(void){
-    
-    char string[] = "Today is a good day to code!";
-    
-    printf("The longest word length is: %zu\n\n", longestWord(string));
-    
-    return 0;
-}
+//int main(void){
+//    
+//    char string[] = "Today is a good day to code!";
+//    
+//    printf("The longest word length is: %zu\n\n", longestWord(string));
+//    
+//    return 0;
+//}
 
 size_t longestWord(const char *ptr){
     
