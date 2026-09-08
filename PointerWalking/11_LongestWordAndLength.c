@@ -10,24 +10,24 @@
 
 const char *longestWordStartAndLength(const char *ptr);
 
-int main(void){
-    
-    char string[] = "";
-/*"Today is programming day"
-"programming"
-""
-"     "
-"hi"
-"hi hello"
-"hello hi"
-"hello     hi"
-"   hello hi   "
-*/
-    
-    printf("The longest word starts at: %p\n\n", longestWordStartAndLength(string));
-    
-    return 0;
-}
+//int main(void){
+//    
+//    char string[] = "";
+///*"Today is programming day"
+//"programming"
+//""
+//"     "
+//"hi"
+//"hi hello"
+//"hello hi"
+//"hello     hi"
+//"   hello hi   "
+//*/
+//    
+//    printf("The longest word starts at: %p\n\n", longestWordStartAndLength(string));
+//    
+//    return 0;
+//}
 
 const char *longestWordStartAndLength(const char *ptr){
     
