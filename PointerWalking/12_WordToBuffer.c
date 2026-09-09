@@ -10,20 +10,20 @@
 
 void wordToBuffer(const char *src, char *dest, size_t destSize);
 
-int main(void){
-    
-    size_t destSize = 50;
-    char src[] = "  ";
-    char dest[destSize];
-    
-    wordToBuffer(src, dest, destSize); 
-    
-    return 0;
-}
+//int main(void){
+//    
+//    size_t destSize = 50;
+//    char src[] = "  ";
+//    char dest[destSize];
+//    
+//    wordToBuffer(src, dest, destSize); 
+//    
+//    return 0;
+//}
 
 void wordToBuffer(const char *src, char *dest, size_t destSize){
     
-    //Design decision
+    //Design decisions
     //Step 1: There will be a a srting given or take from the user
     //Step 2: Read the string and find the longest word
     //Step 3: Find the starting pointer of the longest word
