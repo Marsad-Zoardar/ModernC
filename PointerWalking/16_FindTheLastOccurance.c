@@ -11,23 +11,23 @@
 
 const char *lastOccurance(const char *ptr, char target);
 
-int main(void){
-    
-    const char string[] = "Today is another good day to code!";
-
-    
-//    printf("The length of the string is: %d\n", stringLength);
-    
-    const char *result = lastOccurence(string, 'x');
-    
-    if(result == NULL){
-        printf("The character doesn't exist in the string provided.\n\n");
-    }else{
-        printf("The character found at %p\n\n", result);
-    }
-    
-    return 0;
-}
+//int main(void){
+//    
+//    const char string[] = "Today is another good day to code!";
+//
+//    
+////    printf("The length of the string is: %d\n", stringLength);
+//    
+//    const char *result = lastOccurence(string, 'x');
+//    
+//    if(result == NULL){
+//        printf("The character doesn't exist in the string provided.\n\n");
+//    }else{
+//        printf("The character found at %p\n\n", result);
+//    }
+//    
+//    return 0;
+//}
 
 const char *lastOccurence(const char *ptr, char target){
         
