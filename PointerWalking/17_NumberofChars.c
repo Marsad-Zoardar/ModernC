@@ -22,11 +22,11 @@ size_t numberOfChars(const char *ptr){
     return count;
 }
 
-int main(void){
-    
-    char string[] = "hello world";
-    
-    printf("The number of characters in the string: %zu\n", numberOfChars(string));
-    
-    return 0;
-}
+//int main(void){
+//    
+//    char string[] = "hello world";
+//    
+//    printf("The number of characters in the string: %zu\n", numberOfChars(string));
+//    
+//    return 0;
+//}
