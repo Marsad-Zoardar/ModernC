@@ -10,14 +10,14 @@
 
 const char *firstPointer(const char *str);
 
-int main(void){
-    
-    char string[] = "What a gorgeous day to code today on September 14th, 2026! ";
-    
-    printf("The first word starts at address: %p\n", firstPointer(string));
-    
-    return 0;
-}
+//int main(void){
+//    
+//    char string[] = "What a gorgeous day to code today on September 14th, 2026! ";
+//    
+//    printf("The first word starts at address: %p\n", firstPointer(string));
+//    
+//    return 0;
+//}
 
 const char *firstPointer(const char *str){
 
