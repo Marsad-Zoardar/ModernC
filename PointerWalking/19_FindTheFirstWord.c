@@ -8,7 +8,7 @@
 #include <ctype.h>
 #include <time.h>
 
-const char *firstPointer(const char *str);
+//const char *firstPointer(const char *str);
 
 //int main(void){
 //    
@@ -19,16 +19,16 @@ const char *firstPointer(const char *str);
 //    return 0;
 //}
 
-const char *firstPointer(const char *str){
-
-    
-    while(*str != '\0'){
-        if(isspace((unsigned char)*str)){
-            str++;
-        }else{
-            return str;
-            }
-    }
-
-    return NULL;
-}
+//const char *firstPointer(const char *str){
+//
+//    
+//    while(*str != '\0'){
+//        if(isspace((unsigned char)*str)){
+//            str++;
+//        }else{
+//            return str;
+//            }
+//    }
+//
+//    return NULL;
+//}
