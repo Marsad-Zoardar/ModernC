@@ -21,80 +21,80 @@ const char *firstPointer(const char *ptr);
 const char *lastPointer(const char *ptr);
 size_t wordLength(const char *ptr1);
 
-int main(void){
-    
-    char string[] = "123456789";
-    //Embedded systems is the most fun thing in the world!
-/*Test cases
-"hi"
-"hello"
-"hello world"
-"     hello"
-"hello     "
-"   hello   "
-""
-"12345"
-"123456"
-"123456789"
- * */
-    char *ptr = string;
-    const char *wordBegin = firstPointer(string);
-        if(wordBegin == NULL){
-            printf("Error! The string is empty.\n\n");
-            return -1;
-        }
-    const char *wordEnd = lastPointer(string);
-    size_t capacity = 5;
-    size_t count = 0;
-    char *buffer = malloc(capacity*sizeof(*buffer));
-    if(buffer == NULL){
-        //printf("Memory allocation failed!\n");
-        return -1;
-    }
-/*******************************************************************************************************************/    
-    size_t firstWordLength = wordLength(string);
-    char *writePtr = buffer;
-    
-    while(*ptr != '\0'){
-        if(isspace((unsigned char)*ptr)){
-            ptr++;
-        }else{
-            *writePtr = *ptr;
-            ptr++;
-            writePtr++;
-            count++;
-        }
-        if(count >= capacity){
-            capacity *= 2;
-            char *temp = realloc(buffer, capacity*sizeof(*buffer));
-                if(temp == NULL){
-                    printf("Memory allocation failed!\n");
-                    return -1;
-                }else{
-                    buffer = temp;
-                    writePtr = buffer + count;
-                }
-        }
-        if(ptr == wordEnd + 1){
-            break;
-        }
-    }
-    buffer[count] = '\0';//Forgot to add this. It is important to have to make it a string
-    
-    char *readPtr = buffer;
-    
-    printf("The first word of the string is: ");
-    
-    for(size_t i = 0; i < firstWordLength; i++){
-        printf("%c", *readPtr);
-        readPtr++;
-    }
-    printf("\n\n");
-    
-    free(buffer);
-    
-    return 0;
-}
+//int main(void){
+//    
+//    char string[] = "123456789";
+//    //Embedded systems is the most fun thing in the world!
+///*Test cases
+//"hi"
+//"hello"
+//"hello world"
+//"     hello"
+//"hello     "
+//"   hello   "
+//""
+//"12345"
+//"123456"
+//"123456789"
+// * */
+//    char *ptr = string;
+//    const char *wordBegin = firstPointer(string);
+//        if(wordBegin == NULL){
+//            printf("Error! The string is empty.\n\n");
+//            return -1;
+//        }
+//    const char *wordEnd = lastPointer(string);
+//    size_t capacity = 5;
+//    size_t count = 0;
+//    char *buffer = malloc(capacity*sizeof(*buffer));
+//    if(buffer == NULL){
+//        //printf("Memory allocation failed!\n");
+//        return -1;
+//    }
+///*******************************************************************************************************************/    
+//    size_t firstWordLength = wordLength(string);
+//    char *writePtr = buffer;
+//    
+//    while(*ptr != '\0'){
+//        if(isspace((unsigned char)*ptr)){
+//            ptr++;
+//        }else{
+//            *writePtr = *ptr;
+//            ptr++;
+//            writePtr++;
+//            count++;
+//        }
+//        if(count >= capacity){
+//            capacity *= 2;
+//            char *temp = realloc(buffer, capacity*sizeof(*buffer));
+//                if(temp == NULL){
+//                    printf("Memory allocation failed!\n");
+//                    return -1;
+//                }else{
+//                    buffer = temp;
+//                    writePtr = buffer + count;
+//                }
+//        }
+//        if(ptr == wordEnd + 1){
+//            break;
+//        }
+//    }
+//    buffer[count] = '\0';//Forgot to add this. It is important to have to make it a string
+//    
+//    char *readPtr = buffer;
+//    
+//    printf("The first word of the string is: ");
+//    
+//    for(size_t i = 0; i < firstWordLength; i++){
+//        printf("%c", *readPtr);
+//        readPtr++;
+//    }
+//    printf("\n\n");
+//    
+//    free(buffer);
+//    
+//    return 0;
+//}
 
 //Function to return the first pointer**********************************************************************************
 const char *firstPointer(const char *ptr){
