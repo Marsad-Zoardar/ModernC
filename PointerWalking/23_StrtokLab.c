@@ -58,51 +58,51 @@ What does it do to delimiters?
 #include <time.h>
 
 
-int main(void){
-    
-    char string[] = "Another beautiful day to write some 'C' program!";
-    //const char str[] = "Hello, world!";
-    const char delim[] = " ,.!'";
-    char *token;
-    //char *constToken;
-    
-//Extract the first token
-    token = strtok(string, delim);
-    printf("%s\n", token);
-    
-//Experiment with const char str[]
-    //constToken = strtok(str, delim);
-    //printf("%s\n", constToken);
-    
-    
-//    while(token != NULL){
-//        
-//        printf("%s\n", token);
-//        token = strtok(NULL, delim);//The NULL here points the token to current pointer. if 'string' were used, it would reset the 
-//        //token and get into an infinite loop.
+//int main(void){
+//    
+//    char string[] = "Another beautiful day to write some 'C' program!";
+//    //const char str[] = "Hello, world!";
+//    const char delim[] = " ,.!'";
+//    char *token;
+//    //char *constToken;
+//    
+////Extract the first token
+//    token = strtok(string, delim);
+//    printf("%s\n", token);
+//    
+////Experiment with const char str[]
+//    //constToken = strtok(str, delim);
+//    //printf("%s\n", constToken);
+//    
+//    
+////    while(token != NULL){
+////        
+////        printf("%s\n", token);
+////        token = strtok(NULL, delim);//The NULL here points the token to current pointer. if 'string' were used, it would reset the 
+////        //token and get into an infinite loop.
+////    }
+//
+//    printf("------------------------------\n");
+//    
+////    while(constToken != NULL){
+////        
+////       printf("%s\n", constToken);
+////       constToken = strtok(NULL, delim);//The NULL here points the token to current pointer. if 'string' were used, it would reset the 
+////        //token and get into an infinite loop.
+////    }
+//
+//    char newString[] = "Hello,world;again!";
+//    const char newDelim[] = ",;!";
+//    char *newToken;
+//    
+//    newToken = strtok(newString, newDelim);
+//    //printf("%s\n", newToken);
+//    
+//    while(newToken != NULL){
+//        printf("%s\n", newToken);
+//        newToken = strtok(NULL, newDelim);
 //    }
-
-    printf("------------------------------\n");
-    
-//    while(constToken != NULL){
-//        
-//       printf("%s\n", constToken);
-//       constToken = strtok(NULL, delim);//The NULL here points the token to current pointer. if 'string' were used, it would reset the 
-//        //token and get into an infinite loop.
-//    }
-
-    char newString[] = "Hello,world;again!";
-    const char newDelim[] = ",;!";
-    char *newToken;
-    
-    newToken = strtok(newString, newDelim);
-    //printf("%s\n", newToken);
-    
-    while(newToken != NULL){
-        printf("%s\n", newToken);
-        newToken = strtok(NULL, newDelim);
-    }
-    
-    
-    return 0;
-}
+//    
+//    
+//    return 0;
+//}
