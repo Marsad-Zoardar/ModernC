@@ -57,8 +57,13 @@ int main(void){
      
     printf("Result: %s\n", startPtr(string));
     printf("Result: %s\n", startPtr(NULL));
-    
-    //printf("Result: %s\n", startPtr(NULL));
+    printf("Result: %s\n", startPtr(NULL));
+    printf("Result: %s\n", startPtr(NULL));
+    printf("Result: %s\n", startPtr(NULL));
+    printf("Result: %s\n", startPtr(NULL));
+    printf("Result: %s\n", startPtr(NULL));
+    printf("Result: %s\n", startPtr(NULL));
+    printf("Result: %s\n", startPtr(NULL));
     
     return 0;
 }
@@ -70,15 +75,15 @@ char *startPtr(char *ptr){
     
     if(ptr != NULL){
     //Step 1: Read through the string
-        printf("Step 1: Reading the string\n---------------------------\n");
+        //printf("Step 1: String is not NULL. Reading the string\n---------------------------\n");
         while(*ptr != '\0'){
-            printf("While loop iteration %zu\n", i);
+            //printf("While loop iteration %zu\n", i);
             i++;
             //Step 2: If find a space in the beginning, Skip
-            printf("Step 2: Checking for space/s\n---------------------------\n");
+            //printf("Step 2: Checking for space/s\n---------------------------\n");
             if(isspace((unsigned char)*ptr)){
-                printf("Space found. Skipping....\n");
-                printf("Pointer is at \"%p\" and the content is \"%c\"\n", ptr, *ptr);
+                //printf("Space found. Skipping....\n");
+                //printf("Pointer is at \"%p\" and the content is \"%c\"\n", ptr, *ptr);
                 ptr++;//If space is found, increment pointer to the next memory location
             }else{
             //Step 3: If another space found after the char, set that pointer to '\0'
@@ -96,39 +101,44 @@ char *startPtr(char *ptr){
                     ptr++;
                 }
             nextPtr = ptr;
-            printf("ptr = %p and nextPtr = %p and content = %c\n", ptr, nextPtr, *nextPtr);
+            //printf("ptr = %p and nextPtr = %p and content = %c\n", ptr, nextPtr, *nextPtr);
             
             return sPtr;
             
-        }
-        i = 0;
-    }  
-    }else{
-        ptr = nextPtr;
-        ptr++;
-        if(isspace((unsigned char)*ptr)){
-           ptr++;//If space is found, increment pointer to the next memory location
-        }else{
-        //Step 3: If another space found after the char, set that pointer to '\0'
-            sPtr = ptr;
-            while(*ptr != ' '){
-                ptr++;
-                if(*ptr == '\0'){
-                    nextPtr = ptr;
-                    break;
             }
+            i = 0;
+        }  
+    }else{
+        //printf("Entered \"string(NULL)\"\nExecuting ptr = nextPtr : %p = %p\n", ptr, nextPtr);
+        ptr = nextPtr;
+        //printf("Now ptr = %p and content = %c\nIncrementing ptr\n", ptr, *ptr);
+        while(*ptr != '\0'){
+        
+            if(isspace((unsigned char)*ptr)){
+                ptr++;//If space is found, increment pointer to the next memory location
+            }else{
+            //Step 3: If another space found after the char, set that pointer to '\0'
+            sPtr = ptr;
+                while(*ptr != ' '){
+                    ptr++;
+                        if(*ptr == '\0'){
+                            nextPtr = ptr;
+                            break;
+                        }
+                }
+                
             *ptr = '\0';
             ptr++;
-            while(*ptr == ' '){
-                ptr++;
-            }
+                while(*ptr == ' '){
+                    ptr++;
+                }
             nextPtr = ptr;
+            return sPtr;
             //printf("ptr = %p and nextPtr = %p and content = %c\n", ptr, nextPtr, *nextPtr);
-        }
-        printf("%s\n", nextPtr);
-    }
-    }
-
+            }
     
+        }
+    }
+        
     return sPtr;
 }
