@@ -43,30 +43,30 @@ static char *nextPtr = NULL;
 
 char *startPtr(char *ptr);
 
-int main(void){
-    
-    char string[] = "  It    will be heck of a programming day!";
-    /*
-     * Test cases
-     * "It will be heck of a programming day!"
-     * "Hello world" -->prints "Hello"
-     * "  Hello world" --> prints "  Hello" //Problematic
-     * "Hello   world" --> prints "Hello"
-     * "Hello world  " --> prints "Hello"  
-     */
-     
-    printf("Result: %s\n", startPtr(string));
-    printf("Result: %s\n", startPtr(NULL));
-    printf("Result: %s\n", startPtr(NULL));
-    printf("Result: %s\n", startPtr(NULL));
-    printf("Result: %s\n", startPtr(NULL));
-    printf("Result: %s\n", startPtr(NULL));
-    printf("Result: %s\n", startPtr(NULL));
-    printf("Result: %s\n", startPtr(NULL));
-    printf("Result: %s\n", startPtr(NULL));
-    
-    return 0;
-}
+//int main(void){
+//    
+//    char string[] = "  It    will be heck of a programming day!";
+//    /*
+//     * Test cases
+//     * "It will be heck of a programming day!"
+//     * "Hello world" -->prints "Hello"
+//     * "  Hello world" --> prints "  Hello" //Problematic
+//     * "Hello   world" --> prints "Hello"
+//     * "Hello world  " --> prints "Hello"  
+//     */
+//     
+//    printf("Result: %s\n", startPtr(string));
+//    printf("Result: %s\n", startPtr(NULL));
+//    printf("Result: %s\n", startPtr(NULL));
+//    printf("Result: %s\n", startPtr(NULL));
+//    printf("Result: %s\n", startPtr(NULL));
+//    printf("Result: %s\n", startPtr(NULL));
+//    printf("Result: %s\n", startPtr(NULL));
+//    printf("Result: %s\n", startPtr(NULL));
+//    printf("Result: %s\n", startPtr(NULL));
+//    
+//    return 0;
+//}
 
 char *startPtr(char *ptr){
     
