@@ -20,23 +20,23 @@ One important requirement: Don't modify status.
 #include <string.h>
 #include <stdint.h>
 
-int main(void){
-    
-    uint8_t status = 0b10110001;
-    printf("Status: %u\n", status);
-    
-    uint8_t mask = (1u << 5) | (1u << 3);
-    printf("Mask: %u\n", mask);
-    
-    mask = ~(mask);
-    printf("Mask: %u\n", mask);
-    
-    status &= (mask);
-    printf("Status: %u\n", status);
-    
-    if((status & mask) == 0u){
-        printf("Both bits are cleared!\n");
-    }
-    
-    return 0;
-}
+//int main(void){
+//    
+//    uint8_t status = 0b10110001;
+//    printf("Status: %u\n", status);
+//    
+//    uint8_t mask = (1u << 5) | (1u << 3);
+//    printf("Mask: %u\n", mask);
+//    
+//    mask = ~(mask);
+//    printf("Mask: %u\n", mask);
+//    
+//    status &= (mask);
+//    printf("Status: %u\n", status);
+//    
+//    if((status & mask) == 0u){
+//        printf("Both bits are cleared!\n");
+//    }
+//    
+//    return 0;
+//}
