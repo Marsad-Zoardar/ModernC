@@ -17,18 +17,18 @@ You already know the two operations involved:
 
 #define MODE_MASK  0x1Fu
 #define MODE_SHIFT 6u
-
-
-int main(void){
-    
-    uint16_t control = 0xFFFFu;
-    
-    control &= ~(MODE_MASK << MODE_SHIFT);
-    
-    printf("Control value in hexadecimal: %#x\n", control);
-    
-    control |= (5u << MODE_SHIFT);
-    printf("Control value in hexadecimal: %#x\n", control);
-    
-    return 0;
-}
+//
+//
+//int main(void){
+//    
+//    uint16_t control = 0xFFFFu;
+//    
+//    control &= ~(MODE_MASK << MODE_SHIFT);
+//    
+//    printf("Control value in hexadecimal: %#x\n", control);
+//    
+//    control |= (5u << MODE_SHIFT);
+//    printf("Control value in hexadecimal: %#x\n", control);
+//    
+//    return 0;
+//}
